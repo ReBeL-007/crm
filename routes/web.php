@@ -17,6 +17,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['register' => false]);
+Auth::routes([
+    'register' => false,
+    'verify'=>true
+]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group([
+    'prefix' => 'admins',
+    'as' => 'admin.',
+    'namespace' => 'App\Http\Controllers\Admin',
+    'middleware' => ['auth', 'verified']
+], function () {
+    //Users
+    Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
+    Route::resource('users', 'UsersController');
+});
+
+
