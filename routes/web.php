@@ -35,4 +35,16 @@ Route::group([
     Route::resource('users', 'UsersController');
 });
 
+Route::group([
+    'prefix' => 'profile',
+    'as' => 'profile.',
+    'namespace' => 'App\Http\Controllers\Auth',
+    'middleware' => ['auth', 'verified']
+], function () {
+    // Change password
+    if (file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php'))) {
+        Route::get('password', 'ChangePasswordController@edit')->name('password.edit');
+        Route::post('password', 'ChangePasswordController@update')->name('password.update');
+    }
 
+});
