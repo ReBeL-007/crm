@@ -21,24 +21,35 @@
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a href="{{ route("crm.companies.index") }}"
-                    class="nav-link {{ request()->is('crm/companies') || request()->is('crm/companies/*') ? 'active' : '' }}">
-                    <i class="fa-fw fas fa-user nav-icon">
+
+            <li class="nav-item nav-dropdown {{ request()->is('crm/companies/*') || request()->is('crm/employees/*') ? 'open' : '' }}">
+                <a class="nav-link  nav-dropdown-toggle" href="#">
+                    <i class="fa-fw fas fa-users nav-icon">
 
                     </i>
-                    {{ trans('cruds.company.title') }}
+                    CRM
                 </a>
-            </li>
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route("crm.companies.index") }}"
+                            class="nav-link {{ request()->is('crm/companies') || request()->is('crm/companies/*') ? 'active' : '' }}">
+                            <i class="fa-fw fas fa-user nav-icon">
 
-            <li class="nav-item">
-                <a href="{{ route("crm.employees.index") }}"
-                    class="nav-link {{ request()->is('crm/employees') || request()->is('crm/employees/*') ? 'active' : '' }}">
-                    <i class="fa-fw fas fa-user nav-icon">
+                            </i>
+                            {{ trans('cruds.company.title') }}
+                        </a>
+                    </li>
 
-                    </i>
-                    {{ trans('cruds.employee.title') }}
-                </a>
+                    <li class="nav-item">
+                        <a href="{{ route("crm.employees.index") }}"
+                            class="nav-link {{ request()->is('crm/employees') || request()->is('crm/employees/*') ? 'active' : '' }}">
+                            <i class="fa-fw fas fa-user nav-icon">
+
+                            </i>
+                            {{ trans('cruds.employee.title') }}
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
