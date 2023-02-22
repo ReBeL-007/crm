@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\User;
 
-use Gate;
 use Illuminate\Foundation\Http\FormRequest;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -24,7 +23,7 @@ class StoreUserRequest extends FormRequest
                 'unique:users'],
             'password' => [
                 'required'],
-            
+
         ];
 
     }

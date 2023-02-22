@@ -9,10 +9,6 @@ use App\Http\Requests\User\UpdateUserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Mail;
-use Carbon\Carbon;
-use App\Organization;
-use App\Jobs\SendUserAddedJob;
 
 class UsersController extends Controller
 {
@@ -73,7 +69,7 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        
+
         return back();
 
     }

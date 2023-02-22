@@ -16,6 +16,8 @@ return [
     'change_password'                      => 'Change Password',
     'change_password_success'              => 'Password changed successfully',
     'back_to_list'                         => 'Back to List',
+    'select_all'                           => 'Select All',
+    'deselect_all'                         => 'Deselect All',
     'datatables'                           => [
         'copy'          => 'Copy',
         'csv'           => 'CSV',
