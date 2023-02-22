@@ -48,3 +48,15 @@ Route::group([
     }
 
 });
+
+Route::group([
+    'prefix' => 'crm',
+    'as' => 'crm.',
+    'namespace' => 'App\Http\Controllers\CRM',
+    'middleware' => ['auth', 'verified']
+], function () {
+    //companies
+    Route::delete('companies/destroy', 'CompaniesController@massDestroy')->name('companies.massDestroy');
+    Route::post('companies/media', 'CompaniesController@storeMedia')->name('companies.storeMedia');
+    Route::resource('companies', 'CompaniesController');
+});

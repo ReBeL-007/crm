@@ -29,6 +29,24 @@ return [
         ],
     ],
 
+    'company'              => [
+        'title'          => 'Companies',
+        'title_singular' => 'Company',
+        'fields'         => [
+            'id'                       => 'ID',
+            'id_helper'                => '',
+            'sn'                       => 'S.N',
+            'sn_helper'                => '',
+            'name'                     => 'Name',
+            'name_helper'              => '',
+            'email'                    => 'Email',
+            'email_helper'             => '',
+            'logo'                     => 'Logo',
+            'logo_helper'              => 'Minimum image dimention should be 100 * 100.',
+            'website'                  => 'Website',
+            'website_helper'           => '',
+        ],
+    ],
 
 
 ];
