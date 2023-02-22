@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\User\MassDestroyUserRequest;
-use App\Http\Requests\User\StoreUserRequest;
-use App\Http\Requests\User\UpdateUserRequest;
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\User\UpdateUserRequest;
 use Symfony\Component\HttpFoundation\Response;
+use App\Http\Requests\User\MassDestroyUserRequest;
 
 class UsersController extends Controller
 {
@@ -32,7 +33,6 @@ class UsersController extends Controller
             'email' => $request->email,
             'email_verified_at' => Carbon::now(),
             'password' => $request->password,
-            'created_by' => auth()->user()->id,
             ];
 
 
