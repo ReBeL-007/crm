@@ -30,7 +30,17 @@
                     {{ trans('cruds.company.title') }}
                 </a>
             </li>
-            
+
+            <li class="nav-item">
+                <a href="{{ route("crm.employees.index") }}"
+                    class="nav-link {{ request()->is('crm/employees') || request()->is('crm/employees/*') ? 'active' : '' }}">
+                    <i class="fa-fw fas fa-user nav-icon">
+
+                    </i>
+                    {{ trans('cruds.employee.title') }}
+                </a>
+            </li>
+
             @if(file_exists(app_path('Http/Controllers/Auth/ChangePasswordController.php')))
 
             <li class="nav-item">

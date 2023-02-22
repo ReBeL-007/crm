@@ -59,4 +59,8 @@ Route::group([
     Route::delete('companies/destroy', 'CompaniesController@massDestroy')->name('companies.massDestroy');
     Route::post('companies/media', 'CompaniesController@storeMedia')->name('companies.storeMedia');
     Route::resource('companies', 'CompaniesController');
+
+    //employees
+    Route::delete('employees/destroy', 'EmployeesController@massDestroy')->name('employees.massDestroy');
+    Route::resource('employees', 'EmployeesController');
 });

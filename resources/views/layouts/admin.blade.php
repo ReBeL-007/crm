@@ -29,20 +29,6 @@
           height: 100%;
           object-fit: cover;
       }
-      .view-site {
-        display: flex;
-        align-items: center;
-        gap: .4rem;
-      }
-
-      .view-site i {
-        font-size: .8rem;
-      }
-
-      .view-site:hover,
-      .view-site:hover i {
-        color: blue !important;
-      }
 
     </style>
     @yield('styles')
