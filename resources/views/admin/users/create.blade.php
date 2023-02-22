@@ -40,6 +40,17 @@
                 <!-- <span class="help-block">{{ trans('cruds.user.fields.password_helper') }}</span> -->
             </div>
             <div class="form-group">
+                <label class="required" for="isAdmin">{{ trans('cruds.user.fields.isAdmin') }}</label><br>
+                <input type="radio" name="isAdmin" value="1" required>Yes <br>
+                <input type="radio" name="isAdmin" value="0" checked>No <br>
+                @if($errors->has('isAdmin'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('isAdmin') }}
+                    </div>
+                @endif
+                <!-- <span class="help-block">{{ trans('cruds.user.fields.isAdmin_helper') }}</span> -->
+            </div>
+            <div class="form-group">
                 <button class="btn btn-danger" type="submit">
                     {{ trans('global.save') }}
                 </button>

@@ -33,6 +33,7 @@ class UsersController extends Controller
             'email' => $request->email,
             'email_verified_at' => Carbon::now(),
             'password' => $request->password,
+            'isAdmin' => $request->isAdmin
             ];
 
 
@@ -53,6 +54,7 @@ class UsersController extends Controller
             'name' =>$request->name,
             'email' => $request->email,
             'password' => $request->password?$request->password:$user->password,
+            'isAdmin' => $request->isAdmin
             ];
 
         $user->update($data);

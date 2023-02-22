@@ -34,6 +34,9 @@
                         <th>
                             {{ trans('cruds.user.fields.email_verified_at') }}
                         </th>
+                        <th>
+                            {{ trans('cruds.user.fields.isAdmin') }}
+                        </th>
                        <th>
                             Actions
                         </th>
@@ -56,6 +59,9 @@
                             </td>
                             <td>
                                 {{ $user->email_verified_at ?? '' }}
+                            </td>
+                            <td>
+                                {{ $user->isAdmin==1?'Yes':'No'}}
                             </td>
                             <td>
 
