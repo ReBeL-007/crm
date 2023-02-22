@@ -21,7 +21,7 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $companies = Company::latest()->paginate(10);
+        $companies = Company::latest()->simplePaginate(10);
         return view('crm.companies.index', ['datas' => $companies]);
     }
 

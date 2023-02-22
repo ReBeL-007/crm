@@ -45,4 +45,9 @@ class Company extends Model implements HasMedia
         return $file;
 
     }
+
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }

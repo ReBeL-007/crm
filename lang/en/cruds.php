@@ -49,4 +49,24 @@ return [
     ],
 
 
+    'employee'              => [
+        'title'          => 'Employees',
+        'title_singular' => 'Employee',
+        'fields'         => [
+            'id'                       => 'ID',
+            'id_helper'                => '',
+            'sn'                       => 'S.N',
+            'sn_helper'                => '',
+            'firstname'                     => 'First Name',
+            'firstname_helper'              => '',
+            'lastname'                     => 'Last Name',
+            'lastname_helper'              => '',
+            'email'                    => 'Email',
+            'email_helper'             => '',
+            'phone'                     => 'Phone',
+            'phone_helper'              => '',
+            'company'                  => 'Company',
+            'company_helper'           => '',
+        ],
+    ],
 ];
