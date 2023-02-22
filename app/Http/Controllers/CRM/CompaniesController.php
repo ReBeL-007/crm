@@ -42,7 +42,7 @@ class CompaniesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreCompanyRequest $request)
-    {dd($request);
+    {
         $data = [
             'name' =>$request->name,
             'email' => $request->email,
